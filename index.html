@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>VisionAI</title>
+<style>
+body{margin:0;background:#09090f;color:#fff;font-family:Arial,sans-serif}header{padding:20px 7%;border-bottom:1px solid #222;display:flex;justify-content:space-between}.logo{font-size:25px;font-weight:800}.logo b{color:#8b5cf6}.hero{text-align:center;padding:70px 20px;background:radial-gradient(circle at top,#27154d,#09090f 55%)}h1{font-size:clamp(42px,9vw,76px);margin:20px 0;letter-spacing:-3px}.grad{color:#8b5cf6}.hero p{color:#aaa;max-width:600px;margin:20px auto 30px;line-height:1.6}.btn{background:linear-gradient(90deg,#7c3aed,#2563eb);color:white;border:0;border-radius:12px;padding:14px 22px;font-weight:bold}.section{max-width:1000px;margin:auto;padding:50px 20px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card,.box{background:#11111a;border:1px solid #292938;border-radius:18px;padding:24px}.card p{color:#aaa;line-height:1.5}.box{margin-top:30px}textarea,select{width:100%;box-sizing:border-box;background:#09090f;color:white;border:1px solid #333;border-radius:10px;padding:13px;margin:8px 0 15px}textarea{height:120px}.full{width:100%}#result{display:none;margin-top:18px;background:#09090f;padding:18px;border-radius:12px;white-space:pre-line;color:#ddd}@media(max-width:700px){.grid{grid-template-columns:1fr}}
+</style></head>
+<body>
+<header><div class="logo">Vision<b>AI</b></div><span>Creative Studio</span></header>
+<section class="hero"><small>✨ AI CREATIVE STUDIO</small><h1>Create Anything.<br><span class="grad">Make It Stand Out.</span></h1><p>Create ad ideas, product images and video concepts from simple descriptions — all in one place.</p><a href="#create"><button class="btn">Start Creating ✨</button></a></section>
+<section class="section"><h2>Everything you need to create</h2><div class="grid">
+<div class="card"><h2>🖼️</h2><h3>Generate Image</h3><p>Turn ideas into polished visual concepts.</p></div>
+<div class="card"><h2>🎬</h2><h3>Generate Video</h3><p>Create short-form video concepts and scenes.</p></div>
+<div class="card"><h2>📢</h2><h3>Generate Ad</h3><p>Get hooks, scripts, captions and calls-to-action.</p></div>
+</div>
+<div class="box" id="create"><h2>Create with VisionAI</h2>
+<label>What do you want to create?</label>
+<textarea id="idea" placeholder="Example: A luxury perfume bottle on a glossy black table..."></textarea>
+<label>Type</label><select id="type"><option>Image</option><option>Video</option><option>Ad</option></select>
+<label>Style</label><select id="style"><option>Realistic</option><option>Luxury</option><option>Minimal</option><option>Futuristic</option><option>Fun & Colorful</option></select>
+<button class="btn full" onclick="go()">Generate ✨</button><div id="result"></div></div></section>
+<footer style="text-align:center;padding:30px;color:#777">© 2026 VisionAI</footer>
+<script>
+function go(){let i=document.getElementById('idea').value.trim(),t=document.getElementById('type').value,s=document.getElementById('style').value,r=document.getElementById('result');if(!i){r.style.display='block';r.textContent='Describe what you want to create first.';return}r.style.display='block';r.textContent=t==='Ad'?'📢 AD PACKAGE\n\nHOOK: Stop scrolling — this is worth seeing.\n\nCONCEPT: '+i+'\n\nSTYLE: '+s+'\n\nCTA: Discover it today.':t==='Video'?'🎬 VIDEO CONCEPT\n\nCreate a 10-second '+s.toLowerCase()+' video about: '+i+'\n\nScene 1: Strong visual hook.\nScene 2: Show the main subject.\nScene 3: Clear call-to-action.':'🖼️ IMAGE PROMPT\n\nCreate a '+s.toLowerCase()+' commercial image based on: '+i+'\n\nUse professional composition, lighting and clear subject focus.'}
+</script></body></html>
